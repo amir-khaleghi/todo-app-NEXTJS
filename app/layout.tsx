@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${inter.className} md:grid md:grid-cols-6 gap-4 text-sm md:m-20  lg:mx-40`}
+        className={` ${inter.className} md:grid md:grid-cols-6 gap-4 text-sm md:m-20 lg:mx-40 no-scrollbar bg-dotted`}
       >
         <header className="flex items-start  col-span-1 md:h-screen pt-4">
           <nav className="w-full mx-4 px-4  ">
