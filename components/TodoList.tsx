@@ -6,7 +6,7 @@ const TodoList = ({ todos }) => {
   return (
     <div>
       {/* // ─── Todo ─────────────────────────────────────────────── */}
-      <div>todo</div>
+      <div>Todo</div>
       <div className="border-black border-b" />
       {todos.map((todo) => (
         <div key={todo.id}>
@@ -18,7 +18,7 @@ const TodoList = ({ todos }) => {
       ))}
       <br />
       {/* // ─── Archive ───────────────────────────────────────────── */}
-      <div>Archive</div>
+      <div>Done</div>
       <div className="border-black border-b" />
       {todos.map((todo) => (
         <div key={todo.id}>

@@ -18,7 +18,7 @@ const Todo = ({ todo }) => {
         ''
       ) : (
         <div
-          className={` grid grid-cols-3 place-items-center justify-center  items-center border-b border-slate-300 p-2 my-2 hover:bg-slate-300 rounded-lg  cursor-pointer ${
+          className={` grid grid-cols-3 place-items-center justify-center  items-center border-b border-slate-300 p-2 my-2 hover:bg-slate-300 rounded-lg bg-white  cursor-pointer ${
             todo.completed ? ' bg-green-200' : ''
           } `}
           onClick={() =>

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
+    "@vercel/postgres": "^0.5.1",
     "feather-icons": "^4.29.1",
     "next": "14.0.1",
     "react": "^18",
