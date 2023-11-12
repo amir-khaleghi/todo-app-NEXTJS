@@ -7,7 +7,7 @@ import { useTransition } from 'react';
 /* React Icons __________________________________________ */
 import { PiArchiveBoxFill } from 'react-icons/pi';
 import { MdDeleteForever } from 'react-icons/md';
-import { SlOptions } from 'react-icons/sl';
+import { AiFillEdit } from 'react-icons/ai';
 import { RiInboxUnarchiveFill } from 'react-icons/ri';
 
 const Archive = ({ todo }) => {
@@ -42,7 +42,7 @@ const Archive = ({ todo }) => {
               <MdDeleteForever className=" text-4xl bg-white  duration-300 transition-all p-1 hover:bg-red-200 z-3 rounded-full hover:scale-110 hover:rotate-3" />
             </div>
             <div className="items-center flex justify-center text-2xl hover:scale-110 hover:rotate-3">
-              <SlOptions />
+              <AiFillEdit />
             </div>
           </div>
         </div>
