@@ -5,11 +5,13 @@ import { resolve } from 'path';
 //get data
 // ──────────────────────────────────────────────────── 🟩 ─
 const getData = async () => {
-  // await new Promise((resolve, reject) => setTimeout(() => reject(), 2000));
-  const todos = await db.todo.findMany({});
-  // console.log(todos);
-
-  return todos;
+  try {
+    const todos = await db.todo.findMany();
+    return todos;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    throw error;
+  }
 };
 
 // ──────────────────────────────────────────────────── 🟩 ─

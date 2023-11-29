@@ -7,6 +7,7 @@ export const newTodo = async (formData) => {
   const todo = await db.todo.create({
     data: {
       content: formData.get('content'),
+      time: formData.get('time'),
     },
   });
 

@@ -18,25 +18,26 @@ const Todo = ({ todo }) => {
         ''
       ) : (
         <div
-          className={` grid grid-cols-3 place-items-center justify-center  items-center border-b border-slate-300 p-2 my-2 hover:bg-slate-300 rounded-lg bg-white  cursor-pointer ${
+          className={`card-shadow flex w-full gap-2 items-center justify-between   border-b border-slate-300 p-2 my-2 hover:bg-red-100 rounded-lg bg-blue-200  cursor-pointer ${
             todo.completed ? ' bg-green-200' : ''
           } `}
           onClick={() =>
             startTransition(() => {
               completeTodo(todo.id);
-              console.log(todo.createAt.toLocaleString().split(',')[0]);
+              // console.log(todo.createAt.toLocaleString().split(',')[0]);
             })
           }
         >
-          <div className={` ${todo.completed ? 'line-through ' : ''} `}>
-            {todo.content}
-          </div>
+          <div className="font-bold capitalize">{todo.content}</div>
           {/* // ─── Date ─────────────────────────────────────────── 🟩 ─ */}
-          <div className=" flex flex-col md:flex-row gap-2">
-            <div>{todo.createAt.toLocaleString().split(',')[0]} → </div>
+          <div className=" flex flex-col gap-2">
+            <div>
+              <span className="font-bold text-lg px-2">{todo.time}</span>hours
+            </div>
+            <div>{todo.createAt.toLocaleString().split(',')[0]}</div>
             <div>{todo.createAt.toLocaleString().split(',')[1]}</div>
           </div>
-          <div className=" flex gap-4 ">
+          <div className=" flex md:flex-row flex-col  gap-4">
             <PiArchiveBoxFill className=" bg-white duration-300 transition-all p-1 hover:bg-green-200 text-4xl rounded-full hover:scale-110 hover:rotate-3" />
             <div onClick={() => startTransition(() => deleteTodo(todo.id))}>
               <MdDeleteForever className=" text-4xl bg-white  duration-300 transition-all p-1 hover:bg-red-200 z-3 rounded-full hover:scale-110 hover:rotate-3" />

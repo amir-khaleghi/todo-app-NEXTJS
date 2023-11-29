@@ -21,6 +21,7 @@ model Todo {
   id String @id @default(uuid())
   createAt DateTime @default(now())
   content String
+  time String
   completed Boolean @default(false)
   archives Boolean @default(false)
 }

@@ -25,26 +25,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={` ${inter.className} md:grid md:grid-cols-6 gap-4 text-sm md:m-20 lg:mx-40 no-scrollbar bg-dotted`}
-      >
-        <header className="flex items-start  col-span-1 md:h-screen pt-4">
-          <nav className="w-full mx-4 px-4  ">
-            <ul className="flex flex-row justify-between gap-2 items-center md:flex-col  ">
-              {/* map through Links */}
-              {Links.map((link) => (
-                <li
-                  key={link.href}
-                  className="bg-cyan-200  flex rounded-xl w-full h-24 justify-center items-center duration-300 transition-all hover:rotate-6 hover:scale-105 md:w-36 md:h-36"
-                >
-                  <Link href={link.href}> {link.label} </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </header>
-        <div className="col-span-5">{children}</div>
+    <html
+      className="bg-dotted  md:mx-15 lg:mx-4"
+      lang="en"
+    >
+      <body>
+        <div
+          className={` m-8  p-4  md:grid md:grid-cols-6 gap-4 h-fit text-sm md:m-20 lg:mx-40  bg-white back-shadow`}
+        >
+          <header className="flex items-start   col-span-1 md:h-screen pt-4">
+            <nav className="w-full   ">
+              <ul className=" flex flex-row justify-between gap-2 items-center md:flex-col  ">
+                {/* map through Links */}
+                {Links.map((link) => (
+                  <li
+                    key={link.href}
+                    className="back-shadow bg-cyan-200  flex rounded-lg md:rounded-full w-full h-24 justify-center items-center duration-300 transition-all hover:rotate-6 hover:scale-105 md:w-36 md:h-36"
+                  >
+                    <Link href={link.href}> {link.label} </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </header>
+          <div className="col-span-5 ml-4">{children}</div>
+        </div>
       </body>
     </html>
   );

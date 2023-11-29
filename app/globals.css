@@ -19,7 +19,194 @@
 
 .bg-dotted {
   background: white;
-  background-image: radial-gradient(black 0.5px, transparent 0);
+  background-image: radial-gradient(black 1px, transparent 0);
   background-size: 20px 20px;
   background-position: -19px -19px;
+}
+
+/* Nav __________________________________________________ */
+.nav {
+  @apply flex items-center absolute w-full  px-10 gap-2 left-0  rounded-b-xl p-2  shadow-lg shadow-black/50  bg-white  transition duration-500;
+}
+
+/* Container ____________________________________________ */
+.container {
+  @apply p-4 m-4   border-slate-300 rounded-xl  shadow-lg shadow-black/50 border-t bg-white  transition duration-500;
+}
+.back-shadow {
+  @apply shadow-lg shadow-black/50 border-t bg-white;
+}
+.card-shadow {
+  @apply shadow-lg shadow-black/30 border;
+}
+
+.alert {
+  @apply flex flex-col items-center justify-center rounded-lg p-2 text-red-600 w-full font-semibold bg-red-200;
+}
+.sub-container {
+  @apply flex flex-col items-center justify-center rounded-lg p-2 gap-4;
+}
+
+.list {
+  @apply flex  justify-start border-b border-black/50 p-2  items-center gap-2;
+}
+
+.avatar {
+  @apply w-40 rounded-lg shadow-xl;
+}
+
+/* Buttons ______________________________________________ */
+.btn-primary {
+  @apply p-2 text-black  hover:text-white hover:bg-blue-500 duration-300 transition  font-semibold px-4  shadow-lg shadow-black/20 border-t bg-white;
+}
+.btn-secondary {
+  @apply p-2 hover:text-white shadow-lg shadow-black/20 border-t duration-300 transition rounded-lg px-4  hover:bg-green-400  w-full m-3;
+}
+.btn-danger {
+  @apply p-2 hover:text-white shadow-lg shadow-black/20 border-t duration-300 transition rounded-lg px-4  hover:bg-red-400  w-full m-3;
+}
+.btn-disabled {
+  @apply p-2   border duration-300 rounded-lg px-4   w-1/3 m-3;
+}
+
+/* Form _________________________________________________ */
+.form-row {
+  @apply flex flex-col border-b p-2 border-black w-full items-start;
+}
+
+.form-input {
+  @apply md:gap-4 justify-between w-full flex flex-col md:flex-row md:items-center;
+}
+
+/* Elements _____________________________________________ */
+
+.text-back-yellow {
+  @apply font-bold  md:text-lg text-xs mt-4  rounded-lg p-1;
+}
+
+.text-back-green {
+  @apply font-bold  text-xl bg-green-200 rounded-lg p-1;
+}
+
+td {
+  @apply p-2;
+}
+
+tr {
+  @apply border-b border-black/50;
+}
+
+th {
+  @apply p-2;
+}
+
+input {
+  @apply p-2 mt-2 border-slate-200 border rounded-lg bg-slate-50  shadow-inner;
+}
+label {
+  @apply font-semibold text-sm capitalize;
+}
+
+li {
+  @apply font-semibold;
+}
+
+.hover-105 {
+  @apply transition hover:scale-105 duration-500;
+}
+.hover-110 {
+  @apply transition hover:scale-110 duration-500;
+}
+.hover-shadow {
+  @apply transition hover:shadow-xl duration-500;
+}
+
+/* Template _____________________________________________ */
+/* LoadingTemplate.module.css */
+.loadingContainer {
+  @apply w-full h-full  flex items-center justify-center;
+}
+
+.shadowAnimation {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  opacity: 0.5;
+  animation: shadowPulse 1.5s infinite alternate;
+}
+
+.loadingText {
+  margin-top: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+@keyframes shadowPulse {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+/* ■■■■■■■■■■■■■■■■■■■■■ Prop Style ■■■■■■■■■■■■■■■■■■■■■ */
+/* Card _________________________________________________ */
+.card {
+  @apply grid md:grid-cols-2 rounded-b-xl  lg:grid-cols-3 items-center justify-center gap-4 flex-wrap p-4 text-center;
+}
+
+.card-row {
+  @apply relative justify-between flex flex-col items-center gap-8 rounded-lg border-y hover:rotate-1 cursor-pointer border h-full pb-4 hover-shadow bg-white;
+}
+.card-img {
+  @apply rounded-t-lg md:mt-2 md:w-40 w-full h-full md:rounded-full md:h-40 object-cover;
+}
+.card-thumbnail {
+  @apply h-40  w-full md:h-40;
+}
+
+/* List _________________________________________________ */
+.list {
+  @apply flex gap-4 flex-col p-4;
+}
+
+.list-row {
+  @apply relative border justify-between flex items-center  rounded-lg border-y hover:rotate-1 cursor-pointer pr-2 w-full hover-shadow;
+}
+
+.list-img {
+  @apply md:w-40 h-20 w-20  md:h-40 object-cover;
+}
+
+.list-thumbnail {
+  @apply h-20  w-full md:h-40;
+}
+
+/* styles/loader.css */
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

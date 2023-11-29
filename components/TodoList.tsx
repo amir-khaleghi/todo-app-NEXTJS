@@ -6,8 +6,9 @@ const TodoList = ({ todos }) => {
   return (
     <div>
       {/* // ─── Todo ─────────────────────────────────────────────── */}
-      <div>Todo</div>
-      <div className="border-black border-b" />
+      <div className="flex back-shadow justify-center w-full p-2 font-mono text-xl font-bold bg-cyan-300 rounded-t-lg">
+        Todo
+      </div>
       {todos.map((todo) => (
         <div key={todo.id}>
           <Todo
@@ -18,8 +19,9 @@ const TodoList = ({ todos }) => {
       ))}
       <br />
       {/* // ─── Archive ───────────────────────────────────────────── */}
-      <div>Done</div>
-      <div className="border-black border-b" />
+      <div className="flex back-shadow justify-center w-full p-2 font-mono text-xl font-bold bg-cyan-300 rounded-t-lg">
+        Done
+      </div>
       {todos.map((todo) => (
         <div key={todo.id}>
           <Archive
