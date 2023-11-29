@@ -6,7 +6,7 @@ import { resolve } from 'path';
 // ──────────────────────────────────────────────────── 🟩 ─
 const getData = async () => {
   try {
-    const todos = await db.todo.findMany();
+    const todos = await db.todo.findMany({});
     return todos;
   } catch (error) {
     console.error('Error fetching data:', error);
