@@ -15,7 +15,7 @@ const Todo = ({ todo }) => {
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
     <div
-      className={`flex w-full gap-2 items-center justify-between  p-1 px-4 border  shadow-lg rounded-sm   ${
+      className={`flex w-full gap-2 items-center justify-between hover:cursor-pointer  p-1 px-4 border  shadow-lg rounded-sm   ${
         todo.completed ? ' bg-green-100' : ''
       } `}
       onClick={() =>
