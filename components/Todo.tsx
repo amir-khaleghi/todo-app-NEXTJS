@@ -1,16 +1,13 @@
 'use client';
-import { removeTask } from '@/app/(Redux)/features/tasks/taskSlice';
 import { completeTodo, deleteTodo } from '@/utils/actions';
-import { useEffect, useTransition } from 'react';
+import { useTransition } from 'react';
 import { LuDot } from 'react-icons/lu';
 
 /* React Icons __________________________________________ */
 import { TiDelete } from 'react-icons/ti';
-import { useDispatch } from 'react-redux';
 
 const Todo = ({ todo }) => {
   const [isPending, startTransition] = useTransition();
-  const dispatch = useDispatch();
 
   /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
   return (
