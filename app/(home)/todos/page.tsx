@@ -1,7 +1,6 @@
 import TodoList from '@/components/TodoList';
 import db from '@/utils/db';
 import { resolve } from 'path';
-
 //get data
 // ──────────────────────────────────────────────────── 🟩 ─
 const getData = async () => {
@@ -18,8 +17,11 @@ const getData = async () => {
 const TodosPage = async () => {
   const todos = await getData();
   const todoTasks = todos.filter((todo) => todo.completed === false);
-  const completedPercent = todos.filter((todo) => todo.completed).length;
-  const totlalPercent = Math.floor((completedPercent / todos.length) * 100);
+  const totalHours = todoTasks.reduce(
+    (sum, todo) => sum + Number(todo.time),
+    0
+  );
+  const totalTasks = todoTasks.length;
   return (
     <div className="relative">
       <TodoList todos={todoTasks} />
@@ -27,7 +29,9 @@ const TodosPage = async () => {
         className="absolute  left-1/2 transform -translate-x-1/2  -bottom-10
 "
       >
-        {totlalPercent}% Completed
+        <div className="border-b">
+          {totalHours} Hours | {totalTasks} Tasks
+        </div>
       </div>
     </div>
   );

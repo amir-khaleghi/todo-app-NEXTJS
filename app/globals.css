@@ -14,7 +14,9 @@
     scrollbar-width: none; /* Firefox */
   }
 }
-
+.Toastify__toast {
+  text-transform: capitalize;
+}
 .bg-dotted {
   background: white;
   background-image: radial-gradient(black 1px, transparent 0);

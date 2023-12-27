@@ -1,6 +1,7 @@
 'use server';
 import { revalidatePath } from 'next/cache';
 import db from './db';
+
 // ─── New To Do ────────────────────────────────────── 🟩 ─
 
 export const newTodo = async (formData) => {
@@ -17,6 +18,8 @@ export const newTodo = async (formData) => {
    */
 
   revalidatePath('/todos');
+  revalidatePath('/');
+  revalidatePath('/done');
 };
 
 // ──────────────────────────────────────────────────── 🟩 ─
@@ -28,6 +31,8 @@ export const deleteTodo = async (id) => {
   });
 
   revalidatePath('/todos');
+  revalidatePath('/');
+  revalidatePath('/done');
 };
 
 // ──────────────────────────────────────────────────── 🟩 ─

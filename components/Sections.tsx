@@ -18,18 +18,19 @@ const Sections = () => {
     setShowForm(!showForm);
   };
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* new task */}
       {showForm && (
         <motion.div
+          className="absolute z-10 w-full bottom-24"
           initial={{ opacity: 0, y: 200 }}
-          animate={{ opacity: 1, y: 80 }}
+          animate={{ opacity: 1, y: 90 }}
           transition={{ duration: 1 }}
         >
           <NewTodoForm handleShow={handleShow} />
         </motion.div>
       )}
-      <nav className="flex  bottom-0 w-full justify-between px-4 ">
+      <nav className="absolute z-20  w-full  flex bg-white bottom-0 justify-between px-4 ">
         {Links.map((link) => {
           return (
             <div
@@ -46,13 +47,13 @@ const Sections = () => {
             </div>
           );
         })}
+        <button
+          onClick={handleShow}
+          className="absolute left-1/2 transform -translate-x-1/2 bottom-6 hover:scale-110 hover:shadow-lg rounded-full p-4"
+        >
+          <HiPlusSm className="text-2xl" />
+        </button>
       </nav>
-      <button
-        onClick={handleShow}
-        className="absolute  left-1/2 transform -translate-x-1/2  bottom-6 hover:scale-110 hover:shadow-lg rounded-full p-4"
-      >
-        <HiPlusSm className="text-2xl" />
-      </button>
     </div>
   );
 };

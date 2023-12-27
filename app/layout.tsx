@@ -37,7 +37,7 @@ export default function RootLayout({
           <Navbar />
 
           {/* content */}
-          <div className="min-h-[400px] bg-white">
+          <div className="min-h-[400px] bg-white pb-40">
             <Providers>{children}</Providers>
           </div>
 
