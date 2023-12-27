@@ -17,11 +17,12 @@ const getData = async () => {
 // ──────────────────────────────────────────────────── 🟩 ─
 const TodosPage = async () => {
   const todos = await getData();
+  const todoTasks = todos.filter((todo) => todo.completed === false);
   const completedPercent = todos.filter((todo) => todo.completed).length;
   const totlalPercent = Math.floor((completedPercent / todos.length) * 100);
   return (
     <div className="relative">
-      <TodoList todos={todos} />
+      <TodoList todos={todoTasks} />
       <div
         className="absolute  left-1/2 transform -translate-x-1/2  -bottom-10
 "

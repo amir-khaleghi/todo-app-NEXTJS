@@ -5,6 +5,7 @@ import { FaRegClipboard } from 'react-icons/fa6';
 import Link from 'next/link';
 import NewTodoForm from './NewTodoForm';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Links = [
   { href: '/', label: 'Home', icon: <AiFillHome /> },
@@ -19,7 +20,15 @@ const Sections = () => {
   return (
     <div className="relative">
       {/* new task */}
-      {showForm && <NewTodoForm handleShow={handleShow} />}
+      {showForm && (
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          animate={{ opacity: 1, y: 80 }}
+          transition={{ duration: 1 }}
+        >
+          <NewTodoForm handleShow={handleShow} />
+        </motion.div>
+      )}
       <nav className="flex  bottom-0 w-full justify-between px-4 ">
         {Links.map((link) => {
           return (

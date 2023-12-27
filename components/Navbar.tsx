@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 const Links = [
   { href: '/', label: 'Todays Task' },
   { href: '/todos', label: 'Todos' },
+  { href: '/done', label: 'Done' },
   { href: '/pomodoro', label: 'Pomodoro' },
 ];
 const Navbar = () => {

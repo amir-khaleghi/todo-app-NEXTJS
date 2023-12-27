@@ -41,8 +41,9 @@ const taskSlice = createSlice({
   // reducers------------------------
   reducers: {
     removeTask: (state, action) => {
+      console.log(state);
       const itemId = action.payload;
-      state.tasks = state.tasks.filter((item) => item.id !== itemId);
+      state.tasks.data = state.tasks.data.filter((item) => item.id !== itemId);
     },
   },
 });

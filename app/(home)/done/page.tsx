@@ -17,9 +17,11 @@ const getData = async () => {
 // ──────────────────────────────────────────────────── 🟩 ─
 const TodosPage = async () => {
   const todos = await getData();
+  const doneTasks = todos.filter((todo) => todo.completed === true);
+
   return (
     <div>
-      <TodoList todos={todos} />
+      <TodoList todos={doneTasks} />
     </div>
   );
 };

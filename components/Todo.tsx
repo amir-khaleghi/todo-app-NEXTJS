@@ -43,22 +43,18 @@ const Todo = ({ todo }) => {
       </div>
       {/* // ─── Date ─────────────────────────────────────────── 🟩 ─ */}
       <div className=" flex items-center">
-        <div>{todo.createAt.toLocaleString().split('T')[0]}</div>
+        <div>{todo.createAt.toLocaleString().split(',')[0]}</div>
         <LuDot className="text-4xl text-red-500" />
 
         {/* <div>{todo.createAt.toLocaleString().split(',')[1]}</div> */}
+        <div
+          onClick={() => startTransition(() => deleteTodo(todo.id))}
+          className=" flex md:flex-row   "
+        >
+          <TiDelete className=" text-2xl bg-white  duration-300 transition-all p-1 hover:bg-red-200 z-3 rounded-full hover:scale-110 hover:rotate-3" />
+        </div>
       </div>
       {/* icons */}
-      <div
-        onClick={() => {
-          dispatch(removeTask(todo.id));
-        }}
-        className=" flex md:flex-row   "
-      >
-        <TiDelete className=" text-2xl bg-white  duration-300 transition-all p-1 hover:bg-red-200 z-3 rounded-full hover:scale-110 hover:rotate-3" />
-        {/* <div onClick={() => startTransition(() => deleteTodo(todo.id))}>
-        </div> */}
-      </div>
     </div>
   );
 };
