@@ -15,7 +15,7 @@ const getData = async () => {
 };
 
 // ──────────────────────────────────────────────────── 🟩 ─
-const TodosPage = async () => {
+const DonePage = async () => {
   const todos = await getData();
   const doneTasks = todos.filter((todo) => todo.completed === true);
 
@@ -26,4 +26,4 @@ const TodosPage = async () => {
   );
 };
 
-export default TodosPage;
+export default DonePage;

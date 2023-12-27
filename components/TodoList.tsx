@@ -1,6 +1,5 @@
 import React from 'react';
 import Todo from './Todo';
-import Archive from './Archive';
 
 const TodoList = ({ todos }) => {
   const renderedTask = todos.map((todo) => (

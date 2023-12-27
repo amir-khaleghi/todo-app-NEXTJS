@@ -15,7 +15,7 @@ const getData = async () => {
 };
 
 // ──────────────────────────────────────────────────── 🟩 ─
-const TodosPage = async () => {
+const Home = async () => {
   const currentDate = new Date();
   const todos = await getData();
   const todaysTasks = todos.filter(
@@ -41,4 +41,4 @@ const TodosPage = async () => {
   );
 };
 
-export default TodosPage;
+export default Home;
