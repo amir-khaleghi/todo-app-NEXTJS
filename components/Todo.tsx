@@ -46,7 +46,7 @@ const Todo = ({ todo }) => {
         {/* <div>{todo.createAt.toLocaleString().split(',')[1]}</div> */}
 
         <button
-          onClick={() => startTransition(() => deleteTodo(todo.id))}
+          onClick={() => deleteTodo(todo.id)}
           className=" flex md:flex-row   "
         >
           <TiDelete className=" text-2xl bg-white  duration-300 transition-all p-1 hover:bg-red-200 z-3 rounded-full hover:scale-110 hover:rotate-3" />
