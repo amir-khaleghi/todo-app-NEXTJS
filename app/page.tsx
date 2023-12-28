@@ -18,12 +18,15 @@ const getData = async () => {
 const Home = async () => {
   const currentDate = new Date();
   const todos = await getData();
+
+  /* Todays Tasks _______________________________________ */
   const todaysTasks = todos.filter(
     (todo) =>
       todo.createAt.toLocaleString().split(',')[0] ==
       currentDate.toLocaleString().split(',')[0]
   );
 
+  /* Percent ____________________________________________ */
   const completedPercent = todaysTasks.filter((todo) => todo.completed).length;
   const totlalPercent = todaysTasks.length
     ? Math.floor((completedPercent / todaysTasks.length) * 100)

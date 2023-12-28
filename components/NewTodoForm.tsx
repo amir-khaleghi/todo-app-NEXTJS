@@ -7,10 +7,12 @@ import { toast } from 'react-toastify';
 const NewTodoForm = ({ handleShow }) => {
   const [task, setTask] = useState('');
   const [hours, setHours] = useState('');
-  const handleForm = (e) => {
-    setTask('');
-    setHours('');
-    handleShow();
+  const handleForm = () => {
+    setTimeout(() => {
+      setTask('');
+      setHours('');
+      handleShow();
+    }, 1000);
   };
   const handleClick = () => {
     toast.success('New task added.');
