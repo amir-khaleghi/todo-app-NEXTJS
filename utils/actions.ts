@@ -25,7 +25,7 @@ export const newTodo = async (formData) => {
 // ──────────────────────────────────────────────────── 🟩 ─
 // ─── Delete Todo ──────────────────────────────────── 🟩 ─
 
-export const deleteTodo = async (id) => {
+export const deleteTodo = async (id: string) => {
   await db.todo.delete({
     where: { id },
   });
@@ -59,6 +59,8 @@ export const completeTodo = async (id) => {
     });
 
     revalidatePath('/todos');
+    revalidatePath('/');
+    revalidatePath('/done');
   }
 };
 

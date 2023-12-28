@@ -28,6 +28,7 @@ const Home = async () => {
   const totlalPercent = todaysTasks.length
     ? Math.floor((completedPercent / todaysTasks.length) * 100)
     : 0;
+  /* ■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■ */
   return (
     <div className="relative">
       <TodoList todos={todaysTasks} />

@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 //icons
 import { LuDot } from 'react-icons/lu';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 // ──────────────────────────────────────────────────── 🟩 ─
 const Links = [
   { href: '/', label: 'Todays Task' },
@@ -18,10 +18,6 @@ const Navbar = () => {
   // state
   const [currentRoute, setCurrentRoute] = useState('/');
   // router
-  const router = useRouter();
-  useEffect(() => {
-    router.push('/');
-  }, []);
 
   return (
     <nav className="w-full pt-4 ">
