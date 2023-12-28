@@ -28,9 +28,10 @@ const Home = async () => {
 
   /* Percent ____________________________________________ */
   const completedPercent = todaysTasks.filter((todo) => todo.completed).length;
-  const totlalPercent = todaysTasks.length
+  const totalPercent = todaysTasks.length
     ? Math.floor((completedPercent / todaysTasks.length) * 100)
     : 0;
+
   /* ■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■ */
   return (
     <div className="relative">
@@ -39,7 +40,7 @@ const Home = async () => {
         className="absolute  left-1/2 transform -translate-x-1/2  -bottom-10
 "
       >
-        {totlalPercent}% Completed
+        {totalPercent}% Completed
       </div>
     </div>
   );
