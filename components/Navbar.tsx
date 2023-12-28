@@ -1,7 +1,6 @@
 // create some links
 'use client';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 //icons
 import { LuDot } from 'react-icons/lu';

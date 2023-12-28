@@ -4,16 +4,17 @@ import { newTodo } from '@/utils/actions';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const NewTodoForm = () => {
+const NewTodoForm = ({ handleShow }) => {
   const [task, setTask] = useState('');
   const [hours, setHours] = useState('');
-  const handleForm = () => {
-    setTimeout(() => {
-      setTask('');
-      setHours('');
-    }, 1000);
+  const handleForm = (e) => {
+    setTask('');
+    setHours('');
+    handleShow();
   };
-  /* ■■■■■■■■■■■■■■■■■■■■■■ Return ■■■■■■■■■■■■■■■■■■■■■■ */
+  const handleClick = () => {
+    toast.success('New task added.');
+  };
   return (
     <div className="absolute -z-10 w-full bottom-24">
       <form
@@ -43,9 +44,7 @@ const NewTodoForm = () => {
             />
           </div>
           <button
-            onClick={() => {
-              toast.success('New task added.');
-            }}
+            onClick={handleClick}
             className="col-span-2 w-full col-start-2  back-shadow rounded-xl p-2 my-4 font-semibold text-xs hover-105 hover:bg-green-400 hover:text-white "
             type="submit"
           >

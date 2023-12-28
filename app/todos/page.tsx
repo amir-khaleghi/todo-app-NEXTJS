@@ -5,7 +5,11 @@ import { resolve } from 'path';
 // ──────────────────────────────────────────────────── 🟩 ─
 const getData = async () => {
   try {
-    const todos = await db.todo.findMany({});
+    const todos = await db.todo.findMany({
+      where: {
+        completed: false,
+      },
+    });
     return todos;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -16,15 +20,11 @@ const getData = async () => {
 // ──────────────────────────────────────────────────── 🟩 ─
 const TodosPage = async () => {
   const todos = await getData();
-  const todoTasks = todos.filter((todo) => todo.completed === false);
-  const totalHours = todoTasks.reduce(
-    (sum, todo) => sum + Number(todo.time),
-    0
-  );
-  const totalTasks = todoTasks.length;
+  const totalHours = todos.reduce((sum, todo) => sum + Number(todo.time), 0);
+  const totalTasks = todos.length;
   return (
     <div className="relative">
-      <TodoList todos={todoTasks} />
+      <TodoList todos={todos} />
       <div
         className="absolute  left-1/2 transform -translate-x-1/2  -bottom-10
 "
