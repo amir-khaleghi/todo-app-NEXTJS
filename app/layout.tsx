@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
-import { Providers } from './(Redux)/provider';
 import Sections from '@/components/Sections';
 import Navbar from '@/components/Navbar';
 import Header from '@/components/Header';
@@ -27,9 +26,9 @@ export default function RootLayout({
       className="bg-dotted md:mx-15 lg:mx-4"
       lang="en"
     >
-      <body>
+      <body className="flex items-center justify-center ">
         <div
-          className={`m-4 min-h-[400px]  mb-20 text-sm md:m-20 bg-gray-50 rounded-2xl shadow-xl border   relative`}
+          className={`m-4  max-w-[400px] w-full mb-20 text-sm md:m-20 bg-gray-50 rounded-2xl shadow-xl border relative`}
         >
           {/* header */}
           <Header />

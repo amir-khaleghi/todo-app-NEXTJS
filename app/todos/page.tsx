@@ -1,6 +1,6 @@
 import TodoList from '@/components/TodoList';
 import db from '@/utils/db';
-import { resolve } from 'path';
+
 //get data
 // ──────────────────────────────────────────────────── 🟩 ─
 const getData = async () => {
@@ -19,6 +19,7 @@ const getData = async () => {
 
 // ──────────────────────────────────────────────────── 🟩 ─
 const TodosPage = async () => {
+  
   const todos = await getData();
   const totalHours = todos.reduce((sum, todo) => sum + Number(todo.time), 0);
   const totalTasks = todos.length;

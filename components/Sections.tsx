@@ -4,7 +4,7 @@ import { HiPlusSm } from 'react-icons/hi';
 import { FaRegClipboard } from 'react-icons/fa6';
 import Link from 'next/link';
 import NewTodoForm from './NewTodoForm';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Links = [
@@ -17,11 +17,31 @@ const Sections = () => {
   const handleShow = () => {
     setShowForm(!showForm);
   };
+
+  const dropDownRef = useRef(null);
+
+  /* UseEffect ------------------------ */
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (!dropDownRef.current?.contains(e.target)) {
+        setShowForm(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    //Cleanup
+    return () => {
+      document.removeEventListener('mousedown', handler);
+    };
+  }, []);
+
+  // ─── Return ──────────────────────────────────────────────
+
   return (
-    <div className="relative ">
+    <div className="relative">
       {/* new task */}
       {showForm && (
         <motion.div
+          ref={dropDownRef}
           className="absolute z-10 w-full bottom-24"
           initial={{ opacity: 0, y: 200 }}
           animate={{ opacity: 1, y: 90 }}
