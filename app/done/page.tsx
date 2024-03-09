@@ -1,5 +1,6 @@
 import TodoList from '@/components/TodoList';
 import db from '@/utils/db';
+import { revalidatePath } from 'next/cache';
 import { resolve } from 'path';
 
 //get data
@@ -11,6 +12,8 @@ const getData = async () => {
         completed: true,
       },
     });
+
+    revalidatePath('/done');
     return todos;
   } catch (error) {
     console.error('Error fetching data:', error);

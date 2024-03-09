@@ -1,5 +1,6 @@
 import TodoList from '@/components/TodoList';
 import db from '@/utils/db';
+import { revalidatePath } from 'next/cache';
 
 //get data
 // ──────────────────────────────────────────────────── 🟩 ─
@@ -10,6 +11,8 @@ const getData = async () => {
         completed: false,
       },
     });
+    revalidatePath('/todos');
+
     return todos;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -19,10 +22,12 @@ const getData = async () => {
 
 // ──────────────────────────────────────────────────── 🟩 ─
 const TodosPage = async () => {
-  
   const todos = await getData();
   const totalHours = todos.reduce((sum, todo) => sum + Number(todo.time), 0);
   const totalTasks = todos.length;
+
+  // ─── Return ──────────────────────────────────────────────
+
   return (
     <div className="relative">
       <TodoList todos={todos} />
